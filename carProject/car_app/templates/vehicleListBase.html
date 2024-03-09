@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <title>{% block title %}My Vehicle List site{% endblock %}</title>
+</head>
+
+<body>
+    <div id="sidebar">
+        {% block sidebar %}
+            <ul class="additionalStyle">
+                <li><a href="/">Home</a></li>
+                <li><a href="/addVehicle">Add</a></li>
+            </ul>
+        {% endblock %}    
+    </div>
+
+    <div id="content" style="margin-top: 50px;">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{% extends "vehicleListBase.html" %}
+
+{% block content %}
+
+<form action="/vehicles/" class="addVehicleStyle" method="post">
+    {% csrf_token %}
+    {{form}}
+    <input type="submit" value="Add Vehicle" class="addVehicleButton" />
+</form>
+
+{% endblock %}
