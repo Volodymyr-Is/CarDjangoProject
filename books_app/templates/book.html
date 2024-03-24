@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div  class="books-header">
+    <div class="books-header-container">
+        <div>
+            <h1>Book Details</h1>
+            <h4>
+                <a href="/">Home</a>
+            </h4>
+        </div>
+    </div>
+</div>
+
+<div class="book-details">
+    <div class="book-details-container">
+        <div class="book-details-container-col-1">
+            <img src={% if book.cover %} {{book.cover.url}} {% else %} {% endif %}>
+            <div>
+                <a href="/books/{{book.id}}">Buy this Book</a>
+            </div>
+        </div>
+        <div class="book-details-container-col-2">
+            <div class="book-details-container-col-2-header">
+                <h2>{{book.title}}</h2>
+                <p>{{book.author}}</p>
+                <div class="book-details-container-col-2-subheader">
+                    <a>{{book.date}}</a>
+                    <a href="/books/{{book.id}}">{{book.publisher}}</a>
+                    <a href="#comments">Comments</a>
+                </div>
+            </div>
+
+            <div class="book-details-container-col-2-description">
+                <h2>Average rating</h2>
+                <div class="book-details-container-col-2-description-rating">
+                    <img src="https://cdn.iconscout.com/icon/free/png-256/free-star-bookmark-favorite-shape-rank-like-32386.png"/>
+                    <img src="https://cdn.iconscout.com/icon/free/png-256/free-star-bookmark-favorite-shape-rank-like-32386.png"/>
+                    <img src="https://cdn.iconscout.com/icon/free/png-256/free-star-bookmark-favorite-shape-rank-like-32386.png"/>
+                    <img src="https://cdn.iconscout.com/icon/free/png-256/free-star-bookmark-favorite-shape-rank-like-32386.png"/>
+                    <img src="https://cdn.iconscout.com/icon/free/png-256/free-star-bookmark-favorite-shape-rank-like-32386.png"/>
+                </div>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit, tenetur error, harum nesciunt ipsum debitis quas aliquid. Reprehenderit, quia. Quo neque error repudiandae fuga? Ipsa laudantium molestias eos sapiente officiis modi at sunt excepturi expedita sint? Sed quibusdam recusandae alias error harum maxime adipisci amet laborum. Perspiciatis minima nesciunt dolorem! Officiis iure rerum voluptates a cumque velit quibusdam sed amet tempora. Sit laborum ab, eius fugit doloribus tenetur fugiat, temporibus enim commodi iusto libero magni deleniti quod quam consequuntur! Commodi minima excepturi repudiandae velit hic maxime doloremque. Quaerat provident commodi consectetur veniam similique ad earum omnis ipsum saepe, voluptas, hic voluptates pariatur est explicabo fugiat, dolorum eligendi quam cupiditate excepturi mollitia maiores labore suscipit quas? Nulla, placeat. Voluptatem quaerat non architecto ab laudantium modi minima sunt esse temporibus sint culpa, recusandae aliquam numquam totam ratione voluptas quod exercitationem fuga. Possimus quis earum veniam quasi aliquam eligendi, placeat qui corporis!
+                </p>
+            </div>
+
+            <div class="book-details-container-col-2-comments">
+                <h2>One thought on “80’s Fashion Trend”</h2>
+                <div class="book-details-container-col-2-comment">
+                    <div class="book-details-container-col-2-comment-container">
+                        <h2><a href="/books/{{book.id}}">Mark G. Ladner</a> says:</h2>
+                        <span>{{book.date}}</span>
+                        <div>This book is a beautifully written, inspiring story about following your dreams and discovering the true purpose of your life. Coelho’s writing style is simple yet profound, and the characters are relatable and engaging. A must-read for anyone searching for meaning and direction in their life.</div>
+                        <div class="book-details-container-col-2-description-rating">
+                            <img src="https://cdn.iconscout.com/icon/free/png-256/free-star-bookmark-favorite-shape-rank-like-32386.png"/>
+                            <img src="https://cdn.iconscout.com/icon/free/png-256/free-star-bookmark-favorite-shape-rank-like-32386.png"/>
+                            <img src="https://cdn.iconscout.com/icon/free/png-256/free-star-bookmark-favorite-shape-rank-like-32386.png"/>
+                            <img src="https://cdn.iconscout.com/icon/free/png-256/free-star-bookmark-favorite-shape-rank-like-32386.png"/>
+                            <img src="https://cdn.iconscout.com/icon/free/png-256/free-star-bookmark-favorite-shape-rank-like-32386.png"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="book-details-container-col-2-add-comment">
+                    <h2>Leave Comment</h2>
+                    <div class="book-details-container-col-2-add-comment-info">
+                        <input placeholder="Your Name" name="author" type="text"/>
+                        <input placeholder="Email" name="email" type="text"/>
+                    </div>
+                    <div>
+                        <input value="yes" name="comment-cookies-checkbox" type="checkbox"/>
+                        <label for="comment-cookies-checkbox">Save my name, email, and website in this browser for the next time I comment.</label>
+                    </div>
+                    <div class="book-details-container-col-2-add-comment-info">
+                        <input placeholder="Phone" name="phone" type="text"/>
+                        <input placeholder="Your Website" name="url" type="text"/>
+                    </div>
+                    <textarea name="comment" cols="30" rows="6" placeholder=" Your comment..."></textarea>
+                    <button type="submit">Post Comment</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}  

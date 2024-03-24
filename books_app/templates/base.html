@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>{% block title %}Bookly{% endblock %}</title>
+</head>
+
+<body>
+    <div class="header">
+        <div class="site-branding">
+            <a href="/" class="logo">
+                <img width="675" height="150" src="https://urnothemes.com/bookly/wp-content/uploads/2023/05/bookly-logo.png" class="logo-img">
+            </a>
+        </div>
+    </div>
+    <div class="header-nav">
+        {% block sidebar %}
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/books/">Browse All Books</a></li>
+            <li><a href="/">Categories</a></li>
+            <li><a href="/">Pages</a></li>
+            <li><a href="/">Latest News</a></li>
+            <li><a href="/">Contacts</a></li>
+        </ul>
+        <div class="header-search">
+            <div class="header-search-item">
+                <img src="https://static-00.iconduck.com/assets.00/search-icon-256x256-v6gfhlc1.png"/>
+            </div>
+        </div>
+        {% endblock %}
+    </div>
+
+    <div id="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

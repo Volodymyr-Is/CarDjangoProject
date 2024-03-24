@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="home-main">
+        <div class="home-main-upper">
+            <div class="home-main-upper-items">
+                {% for book in book_list %}
+                <div>
+                    <div class="home-main-upper-items-image">
+                        <img src={% if book.cover %} {{book.cover.url}} {% else %} {% endif %}/>
+                    </div>
+                    <div class="home-main-upper-items-text">
+                        <h4>
+                            <a href="/books/{{book.id}}">{{book.title}}</a>
+                        </h4>
+                        <p>{{book.author}}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="categories">
+        <div class="categories-container">
+            <div class="categories-container-item">
+                <h1><a href="/">Art</a></h1>
+                <h1><a href="/">Biography</a></h1>
+                <h1><a href="/">Comics</a></h1>
+                <h1><a href="/">Education</a></h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="books-main">
+        <div class="books-main-container">
+            <div>
+                <div class="books-main-container-title">
+                    <h1>Popular books</h1>
+                    <a href="/books/">View All</a>
+                </div>
+                <div class="books-main-container-col-1">
+                    {% for book in book_list %}
+                    <div>
+                        <div class="books-main-container-items-image">
+                            <img src={% if book.cover %} {{book.cover.url}} {% else %} {% endif %}/>
+                        </div>
+                        <div class="books-main-container-items-text">
+                            <h4>
+                                <a href="/books/{{book.id}}">{{book.title}}</a>
+                            </h4>
+                            <p>{{book.author}}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="books-main-container-col-2">
+                <section class="books-main-container-col-2-search">
+                    <form class="books-main-container-col-2-search-form" method="get">
+                        <label>Search</label>
+                        <div class="books-main-container-col-2-search-bar">
+                            <input type="search">
+                            <button type="submit">Search</button>
+                        </div>
+                    </form>
+                </section>
+                <section class="books-main-container-col-2-recent-section">
+                    <div class="books-main-container-col-2-recent">
+                        <div class="books-main-container-col-2-recent-container">
+                            <h2>Recent Books</h2>
+                            {% for book in book_list %}
+                            <div class="books-main-container-col-2-recent-items">
+                                <div class="books-main-container-col-2-recent-image">
+                                    <img src={% if book.cover %} {{book.cover.url}} {% else %} {% endif %}/>
+                                </div>
+                                <div class="books-main-container-col-2-recent-text">
+                                    <h4>
+                                        <a href="/books/{{book.id}}">{{book.title}}</a>
+                                    </h4>
+                                    <p>{{book.author}}</p>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+{% endblock %}  
