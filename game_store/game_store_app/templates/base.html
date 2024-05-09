@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>{% block title %}Game Store{% endblock %}</title>
+</head>
+
+<body>
+    <div id="sidebar">
+        {% block sidebar %}
+        <div class="head">
+            <div class="logo">
+                <a href="{% url 'home' %}">
+                    <img src="https://demo.ramsthemes.online/flux/wp-content/uploads/2022/06/logo-flux.svg">
+                </a>
+            </div>
+            <form method="post" action="{% url 'findGame' %}" class="search-form">
+                {% csrf_token %}
+                <div class="search">
+                    <input type="search" name="search_query" id="searchInput">
+                    <button type="submit">
+                        <img src="https://cdn3.iconfinder.com/data/icons/feather-5/24/search-512.png" alt="Search">
+                    </button>
+                </div>
+            </form>
+
+            <div class="dark-mode-button">
+                <button onclick="toggleDarkMode()">
+                    <svg width="30" height="30" id="light-icon">
+                      <circle cx="15" cy="15" r="6" fill="currentColor" />             
+                      <line id="ray" stroke="currentColor" stroke-width="2" stroke-linecap="round" x1="15" y1="1" x2="15" y2="4"></line>
+                      <use href="#ray" transform="rotate(45 15 15)" />
+                      <use href="#ray" transform="rotate(90 15 15)" />
+                      <use href="#ray" transform="rotate(135 15 15)" />
+                      <use href="#ray" transform="rotate(180 15 15)" />
+                      <use href="#ray" transform="rotate(225 15 15)" />
+                      <use href="#ray" transform="rotate(270 15 15)" />
+                      <use href="#ray" transform="rotate(315 15 15)" />
+                    </svg>
+
+                    <svg width="30" height="30" id="dark-icon">
+                      <path fill="currentColor" d="M 23, 5 A 12 12 0 1 0 23, 25 A 12 12 0 0 1 23, 5"/>
+                    </svg>
+                  </button>
+            </div>
+        </div>
+        {% endblock %}
+    </div>
+
+    <div id="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+<script src="{% static 'js/script.js' %}"></script> 
+</html>

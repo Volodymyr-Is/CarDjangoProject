@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Shop</h2>
+<div class="content-container">
+    {% if games %}  
+    {% for game in games %}
+    <div class="games-container">
+        <a href="/games/{{game.id}}" class="game-poster">
+            <img src={% if game.poster %} {{game.poster.url}} {% else %} {% endif %} class="game-poster">
+        </a>
+        <div class="game-information">
+            <a href="/games/{{game.id}}">{{game.title}}</a>
+            <div class="game-platform">
+                {% for platform in game.platform.all %}
+                    <a href="/games/{{platform.name}}">
+                        <img src="{{ platform.image.url }}">
+                    </a>
+                {% endfor %}
+            </div>
+            <hr/>
+            <p>
+                <a href="/games/{{game.id}}">{{game.price}}$</a>
+            </p>
+            <button>Add to Cart</button>
+        </div>
+    </div>
+    {% endfor %}
+    {% endif  %}
+</div>
+{% endblock %}
