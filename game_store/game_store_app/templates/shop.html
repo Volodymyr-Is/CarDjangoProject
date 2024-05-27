@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+
+{% block content %}  
+<div class="shop-container">
+    <aside class="shop-aside">
+        <div class="shop-aside-item">
+            <h2>Genres</h2>
+            {% if genres %}  
+            {% for genre in genres %}
+            <div>
+                <a href="/shop/{{genre.name}}">{{genre.name}}</a>
+            </div>
+            {% endfor %}
+            {% endif  %}
+        </div>
+
+        <div class="shop-aside-item">
+            <h2>Developers</h2>
+            {% if developers %}  
+            {% for developer in developers %}
+            <div>
+                <a href="/shop/{{developer.name}}">{{developer.name}}</a>
+            </div>
+            {% endfor %}
+            {% endif  %}
+        </div>
+
+        <div class="shop-aside-item">
+            <h2>Platforms</h2>
+            {% if platforms %}  
+            {% for platform in platforms %}
+            <div>
+                <a href="/shop/{{platform.name}}">{{platform.name}}</a>
+            </div>
+            {% endfor %}
+            {% endif  %}
+        </div>
+
+        <div class="shop-aside-item">
+            <h2>Tags</h2>
+            {% if tags %}  
+            {% for tag in tags %}
+            <div>
+                <a href="/shop/{{tag.name}}">{{tag.name}}</a>
+            </div>
+            {% endfor %}
+            {% endif %}
+        </div>
+
+        <div class="reset-button">
+            <a href="/shop/">Reset</a>
+        </div>
+    </aside>
+    
+    <div class="shop-main-container">
+        <div>
+            {% if filter %}
+            <h1>Filtered by: <span>{{filter.name}}</span></h1>
+            {% else %}
+            <h1>Filtered by: <span>All</span></h1>
+            {% endif %}
+        </div>
+
+        <div class="content-container" style="grid-template-columns: 1fr 1fr 1fr 1fr;">
+        {% if games %}  
+        {% for game in games %}
+            <div class="games-container">
+                <a href="/games/{{game.id}}" class="game-poster">
+                    <img src={% if game.poster %} {{game.poster.url}} {% else %} {% endif %} class="game-poster">
+                </a>
+                <div class="game-information">
+                    <a href="/games/{{game.id}}">{{game.title}}</a>
+                    <div class="game-platform">
+                        {% for platform in game.platform.all %}
+                            <a href="/games/{{platform.name}}">
+                                <img src="{{ platform.image.url }}">
+                            </a>
+                        {% endfor %}
+                    </div>
+                    <hr/>
+                    <p>
+                        <a href="/games/{{game.id}}">{{game.price}}$</a>
+                    </p>
+                    <div class="buy-game-button">
+                        <a href="/purchase/{{game.id}}">Buy</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

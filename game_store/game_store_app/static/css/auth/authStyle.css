@@ -1,0 +1,106 @@
+body, html{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+.inp-form{
+    margin: 0 auto;
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    align-items: center;
+    inline-size: 300px;
+}
+.inp-form label{
+    text-align: start;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: #d901e446;
+    font-size:12px;
+    color:#49454F;
+    display: flex;
+    flex-direction:column;
+    inline-size: 100%;
+    -webkit-box-shadow: 0px 4px 0px -3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 4px 0px -3px rgba(0,0,0,0.75);
+    box-shadow: 0px 4px 0px -3px rgba(0,0,0,0.75);
+}
+.inp-form label p{
+    padding: 0;
+    margin: 0;
+    padding-left: 2px;
+}
+.form-login{
+    background-color: pink;
+    background: pink;
+}
+.inp-form label .input input{
+    block-size: 100%;
+    inline-size: 83%;
+    border: none;
+    padding-block-end: 10px;
+    outline: none;
+    padding: 10px;
+    border: 1px rgb(187, 187, 187) solid;
+    border-radius: 6px;
+}
+.inp-form label .input input:focus{
+    border: none;
+}
+.inp-form p{
+    margin: 0;
+    font-size: 17px;
+}
+
+.form-register{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 15px;
+}
+.wrapper-register{
+    border-radius: 70px;
+    border: 5px solid #d801e4;
+    background-color: #fff;
+    /* width: 30%; */
+    min-width: 500px;
+    /* height: 40%; */
+    min-height: 300px;
+    margin: 0 auto;
+    vertical-align: center;
+    padding: 3rem;
+    margin: 100px auto;
+}
+.wrapper-register label, select{
+    font-size: 16px;
+}
+.wrapper-register select{
+    border-radius: 6px;
+    height: 40px;
+}
+.container-register{
+    display:grid;
+    place-items:center;
+}
+.btn-submit{
+    width: 80%;
+    background-color: #d801e4;
+    border-radius: 100px;
+    border: none;
+    color: white;
+    height: 40px;
+}
+#id_role{
+    width: 90%;
+}
+
+@media screen and (max-width: 560px){
+    .wrapper-register{
+        width: 80vw;
+        min-width: 200px;
+        height: 60vh;
+        min-height: 600px;
+    }
+}

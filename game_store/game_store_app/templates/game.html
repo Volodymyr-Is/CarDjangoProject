@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="current-game-container">
+    <div class="current-game-poster">
+        <img src={% if game.poster %} {{game.poster.url}} {% else %} {% endif %}>
+    </div>
+    <div class="current-game-information">
+        <div class="current-game-platform">
+            {% for platform in game.platform.all %}
+                <a href="/games/{{platform.name}}">
+                    <img src="{{ platform.image.url }}">
+                </a>
+            {% endfor %}
+        </div>
+        <hr/>
+        <div class="current-game-title">
+            <h1>{{game.title}}</h1>      
+            <h1>{{game.price}}$</h1>
+        </div>
+        <div class="current-game-button">
+            <button>
+                <a href="/purchase/{{game.id}}">Add to Cart</a>
+            </button>
+        </div>
+        <div class="current-game-description">
+            <a>{{game.description}}</a>
+        </div>
+    </div>
+</div>
+<div class="current-game-details-container">
+    <div class="current-game-trailer">
+        <iframe src="https://www.youtube.com/embed/{{game.video_id}}" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="current-game-details">
+        <div class="current-game-alt_name">
+            <h3>Alternative Title</h3>
+            <p>{{game.alt_title}}</p>
+        </div>
+
+        <div class="current-game-release_date">
+            <h3>Release date</h3>
+            <p>{{game.release_date}}</p>
+        </div>
+
+        <div class="current-game-platforms">
+            <h3>Platform</h3>
+            <div class="current-game-div-styles">
+                {% for platform in game.platform.all %}
+                    <div>
+                        <a href="/games/{{platform.name}}">{{platform.name}}</a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="current-game-gerne">
+            <h3>Genre</h3>
+            <div class="current-game-div-styles">
+                {% for genre in game.genres.all %}
+                    <div>
+                        <a href="/games/{{genre.name}}">{{genre.name}}</a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="current-game-developers">
+            <h3>Developers</h3>
+            <a href="/games/{{game.developer.name}}">{{game.developer.name}}</a>
+        </div>
+
+        <div class="current-game-tags">
+            <h3>Tags</h3>
+            <div class="current-game-div-styles">
+                {% for tag in game.tags.all %}
+                    <div>
+                        <a href="/games/{{tag.name}}">{{tag.name}}</a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="comment-container">
+    <div>
+        <h1>Add a Comment</h1>
+        <form method="post" action="{% url 'addComment' game.id %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Add Comment</button>
+        </form>
+
+        <h1>Comments</h1>
+        <div class="all-comments">
+            {% for comment in game.comments.all %}
+                <div class="comment">
+                    <p><span>{{ comment.user }}</span>: {{ comment.text }}</p><hr/>
+                    <p>{{ comment.created_at }}</p>
+                    {% if request.user == comment.user %}
+                        <div class="comment-operations">
+                            <a href="{% url 'editComment' game.id comment.id %}">Edit</a>
+                            <a href="{% url 'deleteComment' game.id comment.id %}">Delete</a>
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

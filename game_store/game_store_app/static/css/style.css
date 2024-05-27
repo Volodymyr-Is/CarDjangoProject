@@ -1,0 +1,635 @@
+/* base.html styles */
+a{
+    text-decoration: none;
+    color: black;
+}
+#sidebar{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 100px;
+    align-items: center;
+}
+.head{
+    width: 60%;
+    /* height: 100%; */
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 100px;
+    align-items: center;
+}
+.logo img{
+    width: 200px;
+    height: 50px;
+}
+.search-form{
+    width: 40%;
+}
+.search{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    border: 1px rgb(186, 186, 186) solid;
+    border-radius: 10px;
+    background-color: white;
+}
+.search button{
+    background-color: white;
+    border: 0;
+    margin: 0 auto;
+}
+.search img{
+    width: 100%;
+    height: 20px;
+    display: flex;
+    cursor: pointer;
+    /* margin: 10px; */
+}
+.search input{
+    width: 90%; 
+    /* border: 1px rgb(186, 186, 186) solid; */
+    border-radius: inherit;
+    border: 0;
+    height: 100%;
+    padding: 0 20px;
+}
+.head-controls{
+    display: flex; 
+    gap: 10px;
+    align-items: center;
+}
+.dark-mode {
+    background-color: rgb(40, 40, 40);
+    color: white !important;
+}
+.dark-mode *{
+    color: white !important;
+    border-color: gray !important;
+}
+.dark-mode textarea{
+    color: black !important;
+}
+.dark-mode aside{
+    background-color: rgb(60, 60, 60);
+}
+.dark-mode-button button{
+    all: unset;
+    cursor: pointer;
+}
+
+.shop-button{
+    padding: 5px 10px;
+    border-radius: 8px;
+    align-self: center;
+    display: flex;
+}
+.shop-button-user{
+    color: black !important;
+    font-size: 20px !important;
+    font-weight: 800;
+}
+.logout-button button{
+    background-color: #f62c84;
+    border-radius: 8px;
+    border: 0;
+    color: white; 
+    padding: 4px 10px;
+}
+.logout-button button:hover{
+    background-color: red;
+}
+.shop-button a{
+    color: white;
+    width: 100%;
+}
+.shop-button a img{
+    width: 30px;
+    height: 30px;
+}
+
+
+/* index.html styles */
+#content{
+    margin: 50px auto;
+    width: 55%;
+    height: 100%;
+}
+.content-container{
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
+    gap: 1%;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+
+.games-container{
+    width: 100%;
+    border-radius: 20px;
+    border: 1px gray solid;
+}
+.game-information{
+    width: 100%;
+    margin-top: 12px;
+}
+.game-information a{
+    font-size: 19px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    color: black;
+    text-decoration: none;
+}
+.game-information hr{
+    width: 60%;
+    /* box-shadow: 1px 1px 3px black; */
+}
+.buy-game-button{
+    width: 80%;
+    margin: 0 auto 15px;
+    border-radius: 20px;
+    background-color: #a85cf9;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    border: 0;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    transition: 0.5s;
+}
+.buy-game-button a{
+    width: 100%;
+    /* height: 100%; */
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    align-self: center;
+}
+.buy-game-button:hover{
+    background-color: #5534a5;
+    cursor: pointer;
+    border-radius: 20px;
+}
+.game-platform{
+    margin: 10px;
+}
+.game-platform img{
+    width: 25px;
+    height: 25px;
+    background-color: white;
+    border-radius: 20px
+}
+.game-poster{
+    width: 100%;
+    border-radius: inherit;
+}
+
+
+/* game.html styles */
+.current-game-container{
+    width: 100%;
+    display: flex;
+    gap: 5%;
+    justify-content: center;
+}
+.current-game-poster img{
+    border-radius: 25px;
+}
+.current-game-information{
+    border: 1px gray solid;
+    border-radius: 25px;
+    height: 100%;
+}
+.current-game-information hr{
+    width: 50%;
+}
+.current-game-button{
+    width: 100%;
+    display: flex;
+    margin: 30px auto;
+}
+.current-game-button button{
+    padding: 0 15px;
+    margin: 0 auto 10px;
+    border-radius: 20px;
+    background-color: #a85cf9;
+    font-size: 18px;
+    font-weight: 700;
+    border: 0;
+    height: 40px;
+}
+.current-game-button button a{
+    color: white;
+}
+.current-game-button button:hover{
+    background-color: #5534a5;
+    cursor: pointer;
+}
+.current-game-platform{
+    margin: 20px auto;
+    width: 30px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+.current-game-platform img{
+    width: 25px;
+    height: 25px;
+    background-color: white;
+    border-radius: 20px;
+    margin: 0 auto;
+}
+.current-game-title{
+    text-align: center;
+    font-size: 22px;
+    margin: 25px auto;
+}
+.current-game-title h1{
+    margin: 10px;
+}
+.current-game-title h1:last-child{
+    font-size: 35px;
+}
+.current-game-description{
+    width: 80%;
+    margin: 0 auto 35px;
+}
+.current-game-description a{
+    font-size: 19px;
+}
+
+.current-game-details-container{
+    display: flex;
+    border: 1px gray solid;
+    border-radius: 25px;
+    margin: 75px auto;
+}
+.current-game-trailer{
+    width: 70%;
+    border-radius: inherit;
+    margin: 20px;
+}
+.current-game-trailer iframe{
+    width: 100%;
+    height: 500px;
+    border-radius: inherit;
+}
+.current-game-details{
+    width: 20%;
+    margin: 10px auto;
+}
+.current-game-details h3{
+    margin: 10px auto;
+}
+.current-game-details p{
+    margin: 0;
+}
+.current-game-details a{
+    background-color: #f62c84;
+    border-radius: 24px;
+    color: white;
+    padding: 5px 8px;
+    height: 20px;
+    /* margin: 10px; */
+}
+.current-game-details a:hover{
+    background-color: #4700d8;
+    cursor: pointer;
+}
+
+.current-game-div-styles{
+    gap: 10px;
+}
+.current-game-div-styles div{
+    display: flex;
+    width: fit-content;
+    margin: 10px 0
+}
+
+.comment-container{
+    border: 1px gray solid;
+    border-radius: 25px;
+    margin: 75px auto;
+}
+.comment-container h1{
+    text-align: center;
+}
+.comment-container form{
+    border: 1px black solid;
+    border-radius: 24px;
+    margin: 10px 20px;
+    padding: 5px 10px 20px;
+    text-align: center;
+}
+.comment-container button{
+    display: flex;
+    margin: 0 auto;
+    color: white;
+    background-color: #f62c84;
+    padding: 5px 12px;
+    border-radius: 24px;
+    border: 0;
+    padding: 10px 20px;
+}
+.comment-container form label{
+    display: flex;
+    font-size: 25px;
+    font-weight: 800;
+    justify-content: center;
+}
+.comment-container form textarea{
+    width: 90%;
+    border-radius: 24px;
+    padding: 10px 15px;
+    margin-top: 5px;
+}
+.all-comments{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.comment{
+    font-size: 20px;
+    margin: 10px 20px 20px;
+    border: 1px black solid;
+    border-radius: 24px;
+    padding: 5px 10px;
+    text-align: center;
+}
+.comment p{
+    margin: 10px 0;
+}
+.comment p span{
+    font-weight: 800;
+}
+.comment hr{
+    width: 50%;
+}
+.comment-operations{
+    margin: 10px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.comment-operations a{
+    color: white;
+    background-color: #f62c84;
+    padding: 6px 12px;
+    border-radius: 24px;
+    margin: 5px;
+}
+
+
+.edit-comment-container{
+    border: 1px gray solid;
+    border-radius: 25px;
+    margin: 75px auto;
+}
+.edit-comment-container h1{
+    text-align: center;
+    margin: 21px 0 10px;
+}
+.edit-comment-container form{
+    margin: 10px 20px;
+    padding: 5px 10px 20px;
+    text-align: center;
+}
+.edit-comment-container button{
+    display: flex;
+    margin: 0 auto;
+    color: white;
+    background-color: #f62c84;
+    padding: 5px 12px;
+    border-radius: 24px;
+    border: 0;
+    padding: 10px 20px;
+}
+.edit-comment-container form label{
+    display: none
+}
+.edit-comment-container form textarea{
+    width: 90%;
+    border-radius: 24px;
+    padding: 10px 15px;
+    margin-top: 5px;
+}
+
+
+/* findBy_page.html styles */
+.data-container{
+    display: flex;
+    margin: 0 auto 75px;
+    gap: 35px;
+    border: 1px gray solid;
+    border-radius: 25px;
+    padding: 20px;
+}
+.data-image{
+    border: 1px gray solid;
+    border-radius: 25px;
+}
+.data-image img{
+    width: 250px;
+    border-radius: inherit;
+    height: 100%;
+    background-color: white;
+}
+.data-information h1{
+    font-size: 43px;
+}
+.data-information p{
+    font-size: 20px;
+}
+
+
+/* shop.html styles */
+.shop-container{
+    width: 100%; 
+    display: flex; 
+    gap: 20px;
+}
+.shop-aside{
+    width: 25%;
+    background-color: #f5f6ff;
+}
+.shop-aside-item{
+    margin: 0 15px;
+}
+.shop-aside-item div{
+    display: flex;
+    width: fit-content;
+    margin: 10px 0;
+}
+.shop-aside-item a{
+    background-color: #f62c84;
+    border-radius: 24px;
+    color: white;
+    padding: 5px 8px;
+    height: 20px;
+}
+.reset-button{
+    display: flex;
+    width: 60%;
+    margin: 35px auto;
+    text-align: center;
+    background-color: gray;
+    border-radius: 24px;
+    padding: 5px 8px;
+    height: 20px;
+    transition: 0.5s;
+}
+.reset-button a{
+    width: 100%;
+    height: 100%;
+    color: white;
+}
+.reset-button:hover{
+    background-color: rgb(100, 100, 100);
+}
+
+.shop-main-container{
+    width: 75%;
+    height: fit-content;
+}
+.shop-main-container div:first-child{
+    text-align: center;
+    width: fit-content;
+}
+.shop-main-container div:first-child h1 span{
+    text-decoration: underline;
+}
+
+
+/* purchase.html styles */
+.purchase-game-container{
+    width: 100%;
+    display: flex;
+    margin: 0 auto;
+}
+.billing-details-container{
+    padding: 0 20px;
+}
+.billing-details-container h1{
+    margin: 0;
+    font-size: 30px;
+}
+.billing-details-item{
+    height: 65px;
+    margin: 18px auto;
+}
+.billing-details-item:first-child{
+    display: flex;
+    gap: 15px;
+}
+.billing-details-item input{
+    padding: 5px 10px;
+    border-radius: 25px;
+    border: 0;
+    background-color: #e1e1e1;
+    height: 20px;
+    width: -webkit-fill-available;
+}
+.billing-details-item:first-child input{
+    width: auto;
+}
+.billing-details-item input:hover{
+    border: 1px gray solid;
+}
+.billing-details-item p{
+    margin: 10px 0;
+}
+.billing-details-item a{
+    font-size: 21px;
+    font-weight: 800;
+}
+.ordered-game{
+    margin: 0 auto;
+    width: -webkit-fill-available;
+    padding: 0 20px;
+}
+.ordered-game-information{
+    width: 100%;
+}
+.ordered-game-information h4{
+    font-size: 30px;
+    margin: 0;
+}
+.ordered-game-information-block{
+    text-align: left;
+    width: 100%;
+    justify-content: center;
+    /* display: flex; */
+}
+.ordered-game-information-header{
+    display: flex;
+    width: 100%;
+    margin: 30px 0;
+    font-size: 22px;
+}
+.ordered-game-information-header div:first-child{
+    width: 66%;
+}
+.ordered-game-information-header div:last-child{
+    width: 33%;
+}
+.ordered-game-information-main{
+    width: 100%;
+    display: flex;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+.ordered-game-information-main-product{
+    display: flex;
+    width: 66%;
+}
+.ordered-game-information-main-product a:hover{
+    color: darkblue;
+}
+.ordered-game-img{
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+}
+.ordered-game-information-footer{
+    display: flex;
+    width: 100%;
+    margin: 30px 0;
+    font-size: 22px;
+}
+.ordered-game-information-footer div:first-child{
+    width: 66%;
+}
+.ordered-game-information-footer div:last-child{
+    width: 33%;
+}
+
+.order-form{
+    width: 100%;
+    margin: 20px 0;
+}
+.order-form p{
+    font-size: 18px;
+    margin: 25px 0;
+}
+.order-form-button{
+    display: flex;
+    width: 100%;
+    background-color: #f62c84;
+    color: white;
+    text-align: center;
+    height: 40px;
+    border-radius: 25px;
+    transition: 0.5s;
+}
+.order-form-button a{
+    width: 100%;
+    color: white;
+    font-size: 22px;
+    align-self: center;
+}
+.order-form-button:hover{
+    background-color: #5534a5;
+    cursor: pointer;
+}

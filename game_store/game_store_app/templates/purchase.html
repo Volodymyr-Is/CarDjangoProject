@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="purchase-game-container">
+    <!-- <h1>Billing details</h1> -->
+    <div class="billing-details-container">
+        <!-- <div class="billing-details-item"> -->
+            <h1>Billing details</h1><hr/>
+        <!-- </div> -->
+        <div class="billing-details">
+            <div class="billing-details-item">
+                <div> 
+                    <a>First name</a>
+                    <p><input type="text"></p>
+                </div>
+                <div>   
+                    <a>Last name</a>
+                    <p><input type="text"></p>
+                </div>
+            </div>
+            <div class="billing-details-item">
+                <a>Country/Region</a>
+                <p><input type="text"></p>
+            </div>
+            <div class="billing-details-item">
+                <a>Street address</a>
+                <p><input type="text"></p>
+            </div>  
+            <div class="billing-details-item">
+                <a>Town/City</a>
+                <p><input type="text"></p>
+            </div>  
+            <div class="billing-details-item">
+                <a>Phone</a>
+                <p><input type="text"></p>
+            </div> 
+            <div class="billing-details-item">
+                <a>Email address</a>
+                <p><input type="text"></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="ordered-game">
+        <div class="ordered-game-information">
+            <h4>Your order</h4><hr/>
+            <div class="ordered-game-information-block">
+                <div class="ordered-game-information-header">
+                    <div>
+                        <strong>Product</strong>
+                    </div>
+                    
+                    <div>
+                        <strong>Total</strong>
+                    </div>
+                </div>
+                <div class="ordered-game-information-main">
+                    <div class="ordered-game-information-main-product">
+                        <div>
+                            <a href="/games/{{game.id}}">
+                                <img src={% if game.poster %} {{game.poster.url}} {% else %} {% endif %} class="ordered-game-img">
+                            </a>
+                        </div>
+                        <a href="/games/{{game.id}}">{{game.title}}</a>
+                    </div>
+                    <div>{{game.price}}$</div>
+                </div><hr/>
+                <div class="ordered-game-information-footer">
+                    <div>
+                        <strong>Total</strong>
+                    </div>
+                    <div>
+                        <strong>{{game.price}}$</strong>
+                    </div>
+                </div><hr/>
+
+                <div class="order-form">
+                    <p>Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our <span><strong>privacy policy</strong></span>.</p>       
+                    <p>
+                        <strong>
+                            <input type="checkbox" id="agreement">
+                            <label for="agreement">I have read and agree to the website <span>terms and conditions</span></label>
+                        </strong>
+                    </p>
+                    <div class="order-form-button">
+                        <a>Place order</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
